@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F632AC421074A6A0033510F /* CustomXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F632AC321074A6A0033510F /* CustomXMLParser.m */; };
 		2F88E4522105F41800D6D976 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F88E4512105F41800D6D976 /* AppDelegate.m */; };
 		2F88E4552105F41800D6D976 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F88E4542105F41800D6D976 /* ViewController.m */; };
 		2F88E4582105F41800D6D976 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F88E4562105F41800D6D976 /* Main.storyboard */; };
@@ -14,9 +15,13 @@
 		2F88E45D2105F41A00D6D976 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F88E45C2105F41A00D6D976 /* Assets.xcassets */; };
 		2F88E4602105F41A00D6D976 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F88E45E2105F41A00D6D976 /* LaunchScreen.storyboard */; };
 		2F88E4632105F41A00D6D976 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F88E4622105F41A00D6D976 /* main.m */; };
+		2F88E46B2105F9BD00D6D976 /* RSSLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F88E46A2105F9BD00D6D976 /* RSSLoader.m */; };
+		2F88E4732106598000D6D976 /* SourseURLforRead.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F88E4722106598000D6D976 /* SourseURLforRead.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F632AC221074A6A0033510F /* CustomXMLParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomXMLParser.h; sourceTree = "<group>"; };
+		2F632AC321074A6A0033510F /* CustomXMLParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomXMLParser.m; sourceTree = "<group>"; };
 		2F88E44D2105F41800D6D976 /* Podcasts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Podcasts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F88E4502105F41800D6D976 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2F88E4512105F41800D6D976 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -28,6 +33,10 @@
 		2F88E45F2105F41A00D6D976 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F88E4612105F41A00D6D976 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F88E4622105F41A00D6D976 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2F88E4692105F9BD00D6D976 /* RSSLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSSLoader.h; sourceTree = "<group>"; };
+		2F88E46A2105F9BD00D6D976 /* RSSLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSSLoader.m; sourceTree = "<group>"; };
+		2F88E4712106598000D6D976 /* SourseURLforRead.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SourseURLforRead.h; sourceTree = "<group>"; };
+		2F88E4722106598000D6D976 /* SourseURLforRead.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SourseURLforRead.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +50,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F632AC0210746FE0033510F /* LoadRSS */ = {
+			isa = PBXGroup;
+			children = (
+				2F88E4712106598000D6D976 /* SourseURLforRead.h */,
+				2F88E4722106598000D6D976 /* SourseURLforRead.m */,
+				2F88E4692105F9BD00D6D976 /* RSSLoader.h */,
+				2F88E46A2105F9BD00D6D976 /* RSSLoader.m */,
+			);
+			name = LoadRSS;
+			sourceTree = "<group>";
+		};
+		2F632AC1210747840033510F /* XMLParser */ = {
+			isa = PBXGroup;
+			children = (
+				2F632AC221074A6A0033510F /* CustomXMLParser.h */,
+				2F632AC321074A6A0033510F /* CustomXMLParser.m */,
+			);
+			path = XMLParser;
+			sourceTree = "<group>";
+		};
 		2F88E4442105F41800D6D976 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +93,9 @@
 				2F88E4512105F41800D6D976 /* AppDelegate.m */,
 				2F88E4532105F41800D6D976 /* ViewController.h */,
 				2F88E4542105F41800D6D976 /* ViewController.m */,
+				2F632AC1210747840033510F /* XMLParser */,
+				2F632AC0210746FE0033510F /* LoadRSS */,
+				2F88E46D2105FCCE00D6D976 /* channelObject */,
 				2F88E4562105F41800D6D976 /* Main.storyboard */,
 				2F88E45C2105F41A00D6D976 /* Assets.xcassets */,
 				2F88E45E2105F41A00D6D976 /* LaunchScreen.storyboard */,
@@ -72,6 +104,13 @@
 				2F88E4592105F41800D6D976 /* Podcasts.xcdatamodeld */,
 			);
 			path = Podcasts;
+			sourceTree = "<group>";
+		};
+		2F88E46D2105FCCE00D6D976 /* channelObject */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = channelObject;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,6 +144,11 @@
 				TargetAttributes = {
 					2F88E44C2105F41800D6D976 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -144,8 +188,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F88E46B2105F9BD00D6D976 /* RSSLoader.m in Sources */,
 				2F88E45B2105F41800D6D976 /* Podcasts.xcdatamodeld in Sources */,
+				2F88E4732106598000D6D976 /* SourseURLforRead.m in Sources */,
 				2F88E4552105F41800D6D976 /* ViewController.m in Sources */,
+				2F632AC421074A6A0033510F /* CustomXMLParser.m in Sources */,
 				2F88E4632105F41A00D6D976 /* main.m in Sources */,
 				2F88E4522105F41800D6D976 /* AppDelegate.m in Sources */,
 			);

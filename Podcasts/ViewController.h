@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RSSLoader.h"
 
 @interface ViewController : UIViewController
 
+@property (nonatomic) RSSLoader* loader;
 
 @end
 
