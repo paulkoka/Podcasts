@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "RssItemsCDCVC.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +17,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    ViewController* vc = [[ViewController alloc] init];
+  
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+   
+    UICollectionViewFlowLayout* flow = [[UICollectionViewFlowLayout alloc] init];
+    RssItemsCDCVC* vc = [[RssItemsCDCVC alloc] initWithCollectionViewLayout:flow];;
+   
+    
     [self.window setRootViewController:vc];
     [self.window makeKeyAndVisible];
     return YES;

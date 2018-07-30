@@ -9,11 +9,14 @@
 #import <Foundation/Foundation.h>
 
 
+#import "MyTags.h"
+#import "KPIItem+CoreDataClass.h"
+
 @interface CustomXMLParser : NSObject <NSXMLParserDelegate>
 
 @property (nonatomic) NSXMLParser* parser;
 
--(id) initWithDataAndParse:(NSData*) data;
+-(id) initWithDataAndParse:(NSData*) data withContext:(NSManagedObjectContext*)context;
 
 
 @end

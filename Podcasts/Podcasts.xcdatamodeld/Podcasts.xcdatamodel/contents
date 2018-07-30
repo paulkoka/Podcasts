@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17F77" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
-    <entity name="KPIContent" representedClassName="KPIContent" syncable="YES" codeGenerationType="class">
+    <entity name="KPIContent" representedClassName="KPIContent" syncable="YES">
         <attribute name="localURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="webURL" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="urlForContent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="KPIItem" inverseName="contentURL" inverseEntity="KPIItem" syncable="YES"/>
     </entity>
-    <entity name="KPIItem" representedClassName="KPIItem" syncable="YES" codeGenerationType="class">
+    <entity name="KPIItem" representedClassName="KPIItem" syncable="YES">
         <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="duration" optional="YES" attributeType="String" syncable="YES"/>
@@ -12,16 +13,17 @@
         <attribute name="publicationDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="sourceType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="content" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="KPIContent" syncable="YES"/>
-        <relationship name="image" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="KPIPicture" syncable="YES"/>
+        <relationship name="contentURL" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="KPIContent" inverseName="urlForContent" inverseEntity="KPIContent" syncable="YES"/>
+        <relationship name="pictureURL" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="KPIPicture" inverseName="urlForItemPicture" inverseEntity="KPIPicture" syncable="YES"/>
     </entity>
-    <entity name="KPIPicture" representedClassName="KPIPicture" syncable="YES" codeGenerationType="class">
+    <entity name="KPIPicture" representedClassName="KPIPicture" syncable="YES">
         <attribute name="localURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="webURL" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="urlForItemPicture" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="KPIItem" inverseName="pictureURL" inverseEntity="KPIItem" syncable="YES"/>
     </entity>
     <elements>
-        <element name="KPIItem" positionX="-63" positionY="-18" width="128" height="180"/>
-        <element name="KPIPicture" positionX="178" positionY="114" width="128" height="75"/>
-        <element name="KPIContent" positionX="178" positionY="18" width="128" height="75"/>
+        <element name="KPIItem" positionX="88" positionY="-51" width="128" height="178"/>
+        <element name="KPIContent" positionX="97" positionY="-198" width="128" height="88"/>
+        <element name="KPIPicture" positionX="99" positionY="186" width="128" height="88"/>
     </elements>
 </model>

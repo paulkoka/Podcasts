@@ -7,18 +7,9 @@
 //
 
 #import "CustomXMLParser.h"
+#import "KPIItem+rSSItem.h"
 
-static NSString* item = @"item";
-static NSString* title = @"title";
-static NSString* author = @"itunes:author";
-static NSString* guid = @"guid";
-static NSString* pubDate = @"pubDate";
-static NSString* duration = @"itunes:duration";
-static NSString* content = @"enclosure";
-static NSString* image = @"itunes:image";
-static NSString* MysourceType = @"copyright";
-
-int count = 0;
+int i = 0;
 
 @interface CustomXMLParser()
 
@@ -27,13 +18,26 @@ int count = 0;
 @property (nonatomic) NSMutableString *capturedCharacters;
 @property (nonatomic) NSMutableString* currentSourceType;
 
+@property (nonatomic)NSMutableDictionary* itemFromRSS;
+
+@property (nonatomic) NSString* currentElementName;
+
+@property (nonatomic) MyTags* tags;
+@property(nonatomic) KPIItem* itemInCoreData;
+
+@property(nonatomic) NSManagedObjectContext* context;
+
+
 @end
 
 @implementation CustomXMLParser
 
--(id) initWithDataAndParse:(NSData*) data{
+-(id) initWithDataAndParse:(NSData*) data withContext:(NSManagedObjectContext*)context {
     if ((self = [super init])) {
         _parser = [[NSXMLParser alloc] initWithData:data];
+        _tags = [[MyTags alloc] init];
+        _context = context;
+
         [self parseXML];
     }
     return self;
@@ -55,35 +59,54 @@ int count = 0;
 
 -(void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary<NSString *,NSString *> *)attributeDict{
     
-    if ( !self.waitingForSourseName && !self.inItemElement && [elementName isEqualToString:MysourceType]) {
+    if ( !self.waitingForSourseName && !self.inItemElement && [elementName isEqualToString:self.tags.MysourceType]) {
         self.waitingForSourseName = YES;
+        return;
     }
     
-    if ([elementName isEqualToString:item]) {
+    if ([elementName isEqualToString:_tags.item]) {
         self.inItemElement = YES;
+        self.itemFromRSS = [NSMutableDictionary dictionary];
+        return;
     }
     
-    if (self.inItemElement &&
-        ([elementName isEqualToString:title]   || [elementName isEqualToString:author]  ||
-         [elementName isEqualToString:guid]    || [elementName isEqualToString:pubDate] ||
-         [elementName isEqualToString:duration]|| [elementName isEqualToString:content] ||
-         [elementName isEqualToString:image]))
+    if (self.inItemElement && [_tags.setOfTags containsObject:elementName])
                                     {
+                                        
                                        self.capturedCharacters = [NSMutableString string];
+                                        
+                                        if ([elementName isEqualToString:_tags.imageURL]) {
+                                            [self.itemFromRSS setObject:[attributeDict objectForKey:@"href"] forKey:elementName];
+                                            return;
+                                        }
+                                        if ([elementName isEqualToString:_tags.contentURL]) {
+                                            [self.itemFromRSS setObject: [attributeDict objectForKey:@"url"] forKey:elementName];
+                                            return;
+                                        }
+                                        
+                                        self.currentElementName = [NSString stringWithString:elementName];
+                                        
                                     }
     }
 
 -(void)parser:(NSXMLParser *)parser foundCDATA:(NSData *)CDATABlock{
     if (self.inItemElement) {
         NSString* string = [[NSString alloc] initWithData:CDATABlock encoding:NSUTF8StringEncoding];
-            if ([string containsString:@"<p>"] ) {
+            if ([string containsString:@"<p>"] )
+            {
             NSCharacterSet* set = [NSCharacterSet  characterSetWithCharactersInString:@"</p>"];
+                
             string = [string stringByTrimmingCharactersInSet:set];
+                
                 NSRange range = [string rangeOfString:@"</p>"];
+                
                 if (NSNotFound != range.location) {
                     string = [string substringToIndex: (range.location)];
                 }
+                
+                
         }
+      [self.itemFromRSS setObject:string forKey:_tags.details];
     }
 
 }
@@ -97,23 +120,29 @@ int count = 0;
     }
     
     if (self.capturedCharacters) {
-
-        [self.capturedCharacters appendString:string];
+        if ([self.currentElementName isEqualToString:_tags.pubDate]) {
+            
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            
+            formatter.dateFormat = @"E, dd MMM yyyy HH:mm:ss Z";
+            
+            NSDate *date = [formatter dateFromString:string];
+            [self.itemFromRSS setObject:date forKey:_tags.pubDate];
+            return;
+        }
+        [self.itemFromRSS setObject:string forKey:self.currentElementName];
+     
+        //[self.capturedCharacters appendString:string];
     }
     
 }
 
-
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName
   namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     
-    if (self.inItemElement &&
-        ([elementName isEqualToString:title]   || [elementName isEqualToString:author]  ||
-         [elementName isEqualToString:guid]    || [elementName isEqualToString:pubDate] ||
-         [elementName isEqualToString:duration]|| [elementName isEqualToString:content] ||
-         [elementName isEqualToString:image]))
+    if (self.inItemElement && [_tags.setOfTags containsObject:elementName])
     {
-        if ([elementName isEqualToString:title]) {
+        if ([elementName isEqualToString:_tags.title]) {
             if ([self.capturedCharacters containsString:@" | "]) {
                 NSRange range = [self.capturedCharacters rangeOfString:@" | "];
                 if (NSNotFound != range.location) {
@@ -121,13 +150,24 @@ int count = 0;
                 }
             }
         }
+        
         self.capturedCharacters = nil;
-       
+        self.currentElementName = nil;
+        
         }
             if ([elementName isEqualToString:@"item"]) {
+                
+                [self.itemFromRSS setObject:self.currentSourceType forKey:self.tags.MysourceType];
+                
+                self.itemInCoreData = [KPIItem itemWithRSSItem:self.itemFromRSS inManagedObjectContext:_context];
+                            
+                self.itemFromRSS = nil;
+          
                 self.inItemElement = NO;
     }
 }
 
-
+-(void)parserDidEndDocument:(NSXMLParser *)parser{
+    NSLog(@"parserDidEndDocument");
+}
 @end
