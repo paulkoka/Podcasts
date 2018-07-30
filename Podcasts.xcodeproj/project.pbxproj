@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F22D592210F318600D86B13 /* CollectionViewControllerWithCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F22D591210F318600D86B13 /* CollectionViewControllerWithCoreData.m */; };
+		2F22D5AA210F4D5100D86B13 /* CollectionVewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F22D5A9210F4D5100D86B13 /* CollectionVewCell.m */; };
 		2F312237210DD851009A3B3D /* KPIItem+rSSItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F312236210DD851009A3B3D /* KPIItem+rSSItem.m */; };
 		2F31223A210DE05C009A3B3D /* Podcasts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F312238210DE05C009A3B3D /* Podcasts.xcdatamodeld */; };
 		2F312247210DE219009A3B3D /* KPIContent+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F31223D210DE219009A3B3D /* KPIContent+CoreDataClass.m */; };
@@ -19,7 +21,6 @@
 		2F312253210DE4D9009A3B3D /* KPIPicture+addPictureURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F312252210DE4D9009A3B3D /* KPIPicture+addPictureURL.m */; };
 		2F312256210E1C7F009A3B3D /* CoreDataCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F312255210E1C7F009A3B3D /* CoreDataCollectionViewController.m */; };
 		2F312259210E268A009A3B3D /* RssItemsCDCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F312258210E268A009A3B3D /* RssItemsCDCVC.m */; };
-		2F31225D210E2D00009A3B3D /* mainScreenCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F31225C210E2D00009A3B3D /* mainScreenCell.m */; };
 		2F5903E9210A275500775237 /* KPMasterCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5903E8210A275500775237 /* KPMasterCollectionViewController.m */; };
 		2F5903F1210A4DD500775237 /* MyTags.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5903F0210A4DD500775237 /* MyTags.m */; };
 		2F632AC421074A6A0033510F /* CustomXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F632AC321074A6A0033510F /* CustomXMLParser.m */; };
@@ -34,6 +35,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F22D590210F318600D86B13 /* CollectionViewControllerWithCoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewControllerWithCoreData.h; sourceTree = "<group>"; };
+		2F22D591210F318600D86B13 /* CollectionViewControllerWithCoreData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewControllerWithCoreData.m; sourceTree = "<group>"; };
+		2F22D5A8210F4D5000D86B13 /* CollectionVewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionVewCell.h; sourceTree = "<group>"; };
+		2F22D5A9210F4D5100D86B13 /* CollectionVewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionVewCell.m; sourceTree = "<group>"; };
 		2F312235210DD851009A3B3D /* KPIItem+rSSItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KPIItem+rSSItem.h"; sourceTree = "<group>"; };
 		2F312236210DD851009A3B3D /* KPIItem+rSSItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "KPIItem+rSSItem.m"; sourceTree = "<group>"; };
 		2F312239210DE05C009A3B3D /* Podcasts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Podcasts.xcdatamodel; sourceTree = "<group>"; };
@@ -57,8 +62,6 @@
 		2F312255210E1C7F009A3B3D /* CoreDataCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataCollectionViewController.m; sourceTree = "<group>"; };
 		2F312257210E268A009A3B3D /* RssItemsCDCVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RssItemsCDCVC.h; sourceTree = "<group>"; };
 		2F312258210E268A009A3B3D /* RssItemsCDCVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RssItemsCDCVC.m; sourceTree = "<group>"; };
-		2F31225B210E2D00009A3B3D /* mainScreenCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mainScreenCell.h; sourceTree = "<group>"; };
-		2F31225C210E2D00009A3B3D /* mainScreenCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mainScreenCell.m; sourceTree = "<group>"; };
 		2F5903E7210A275500775237 /* KPMasterCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KPMasterCollectionViewController.h; sourceTree = "<group>"; };
 		2F5903E8210A275500775237 /* KPMasterCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KPMasterCollectionViewController.m; sourceTree = "<group>"; };
 		2F5903EF210A4DD500775237 /* MyTags.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTags.h; sourceTree = "<group>"; };
@@ -92,6 +95,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F22D593210F318C00D86B13 /* prevoiusVC */ = {
+			isa = PBXGroup;
+			children = (
+				2F312257210E268A009A3B3D /* RssItemsCDCVC.h */,
+				2F312258210E268A009A3B3D /* RssItemsCDCVC.m */,
+				2F5903E7210A275500775237 /* KPMasterCollectionViewController.h */,
+				2F5903E8210A275500775237 /* KPMasterCollectionViewController.m */,
+				2F88E4532105F41800D6D976 /* ViewController.h */,
+				2F88E4542105F41800D6D976 /* ViewController.m */,
+				2F312254210E1C7F009A3B3D /* CoreDataCollectionViewController.h */,
+				2F312255210E1C7F009A3B3D /* CoreDataCollectionViewController.m */,
+			);
+			name = prevoiusVC;
+			sourceTree = "<group>";
+		};
 		2F31224D210DE43F009A3B3D /* categoriesForCreatingEntities */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,8 +126,8 @@
 		2F31225A210E2CD4009A3B3D /* cells */ = {
 			isa = PBXGroup;
 			children = (
-				2F31225B210E2D00009A3B3D /* mainScreenCell.h */,
-				2F31225C210E2D00009A3B3D /* mainScreenCell.m */,
+				2F22D5A8210F4D5000D86B13 /* CollectionVewCell.h */,
+				2F22D5A9210F4D5100D86B13 /* CollectionVewCell.m */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -118,14 +136,9 @@
 			isa = PBXGroup;
 			children = (
 				2F31225A210E2CD4009A3B3D /* cells */,
-				2F312254210E1C7F009A3B3D /* CoreDataCollectionViewController.h */,
-				2F312255210E1C7F009A3B3D /* CoreDataCollectionViewController.m */,
-				2F312257210E268A009A3B3D /* RssItemsCDCVC.h */,
-				2F312258210E268A009A3B3D /* RssItemsCDCVC.m */,
-				2F5903E7210A275500775237 /* KPMasterCollectionViewController.h */,
-				2F5903E8210A275500775237 /* KPMasterCollectionViewController.m */,
-				2F88E4532105F41800D6D976 /* ViewController.h */,
-				2F88E4542105F41800D6D976 /* ViewController.m */,
+				2F22D593210F318C00D86B13 /* prevoiusVC */,
+				2F22D590210F318600D86B13 /* CollectionViewControllerWithCoreData.h */,
+				2F22D591210F318600D86B13 /* CollectionViewControllerWithCoreData.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -295,9 +308,10 @@
 				2F88E46B2105F9BD00D6D976 /* RSSLoader.m in Sources */,
 				2F312256210E1C7F009A3B3D /* CoreDataCollectionViewController.m in Sources */,
 				2F312250210DE481009A3B3D /* KPIContent+CreateContent.m in Sources */,
-				2F31225D210E2D00009A3B3D /* mainScreenCell.m in Sources */,
+				2F22D5AA210F4D5100D86B13 /* CollectionVewCell.m in Sources */,
 				2F88E4732106598000D6D976 /* SourseURLforRead.m in Sources */,
 				2F31223A210DE05C009A3B3D /* Podcasts.xcdatamodeld in Sources */,
+				2F22D592210F318600D86B13 /* CollectionViewControllerWithCoreData.m in Sources */,
 				2F312248210DE219009A3B3D /* KPIContent+CoreDataProperties.m in Sources */,
 				2F312247210DE219009A3B3D /* KPIContent+CoreDataClass.m in Sources */,
 				2F5903E9210A275500775237 /* KPMasterCollectionViewController.m in Sources */,

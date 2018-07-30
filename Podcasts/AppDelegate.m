@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "RssItemsCDCVC.h"
+#import "CollectionViewControllerWithCoreData.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +21,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
    
     UICollectionViewFlowLayout* flow = [[UICollectionViewFlowLayout alloc] init];
-    RssItemsCDCVC* vc = [[RssItemsCDCVC alloc] initWithCollectionViewLayout:flow];;
+    CollectionViewControllerWithCoreData* vc = [[CollectionViewControllerWithCoreData alloc] initWithCollectionViewLayout:flow];;
    
     
     [self.window setRootViewController:vc];
