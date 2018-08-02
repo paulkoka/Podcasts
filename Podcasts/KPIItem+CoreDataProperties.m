@@ -2,7 +2,7 @@
 //  KPIItem+CoreDataProperties.m
 //  Podcasts
 //
-//  Created by Pavel Koka on 7/29/18.
+//  Created by Pavel Koka on 8/1/18.
 //  Copyright © 2018 Pavel Koka. All rights reserved.
 //
 //
@@ -19,9 +19,9 @@
 @dynamic details;
 @dynamic duration;
 @dynamic gUID;
+@dynamic publicationDate;
 @dynamic sourceType;
 @dynamic title;
-@dynamic publicationDate;
 @dynamic contentURL;
 @dynamic pictureURL;
 

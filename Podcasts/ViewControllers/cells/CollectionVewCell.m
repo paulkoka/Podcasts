@@ -7,16 +7,27 @@
 //
 
 #import "CollectionVewCell.h"
+#import "NSString+stringFromDate.h"
 
 
-
-static NSString * const kMusicPlaceHolder = @"music_placeholder2";
-static NSString * const kVideoPlaceHolder = @"video_placeholder3";
+static NSString * const kMusicPlaceHolder = @"placeholder";
+static NSString * const kVideoPlaceHolder = @"placeholder";
 
 
 @interface CollectionVewCell()
+@property (strong, nonatomic) KPIItem* itemObj;
+@property (strong, nonatomic) NSString* currentURL;
 
+//right StackView
+@property (strong, nonatomic) UIStackView *infoStack;
+@property (strong, nonatomic) UILabel *title;
+@property (strong, nonatomic) UILabel *author;
+@property (strong, nonatomic) UILabel *date;
 
+//left StackView
+@property (strong, nonatomic) UIStackView *imageAndTypeStack;
+@property (strong, nonatomic) UIImageView *imageView;
+@property (strong, nonatomic) UILabel     *duration;
 
 @end
 
@@ -67,7 +78,6 @@ static NSString * const kVideoPlaceHolder = @"video_placeholder3";
     [self.imageView setContentMode:UIViewContentModeScaleAspectFill];
     
     
-    
     //setting socntrainst and stack
     [self createInfoStackView];
     [self createImageAndTypeStackView];
@@ -79,6 +89,41 @@ static NSString * const kVideoPlaceHolder = @"video_placeholder3";
 
 
 
+-(void)setDataToLabelsFrom:(KPIItem*)item {
+    self.itemObj = item;
+    
+    self.title.text = item.title;
+    self.author.text = item.author;
+    [self.author setTextAlignment:NSTextAlignmentLeft];
+    [self setDateLabelWithDate:[NSString getStringFromDate:item.publicationDate] ];
+    self.duration.text = item.duration;
+    
+    //self.imageView.image = item.itemImage;
+//    if (item.image.localLink != nil ) {
+//        [self.imageView setImage:[[ServiceManager sharedManager] fetchImageFromSandBoxForItem:item]];
+//        NSLog(@"LOCAL LINK EXIXST");
+//    } else {
+//        [[ServiceManager sharedManager] downloadImageForItem:item
+//                                            withImageQuality:ImageQualityLow
+//                                         withCompletionBlock:^(NSData *data) {
+//
+//            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//                UIImage* img = [UIImage imageWithData:data];
+//
+//                dispatch_async(dispatch_get_main_queue(), ^{
+//                    self.imageView.image = img;
+//                });
+//            });
+//        }];
+//    }
+
+//    if (item.sourceType == MP3SourceType) {
+//      [self.imageView setContentMode:UIViewContentModeScaleAspectFit];
+//    } else {
+//      [self.imageView setContentMode:UIViewContentModeScaleAspectFill];
+//    }
+
+}
 
 
 -(void)setDateLabelWithDate:(NSString*)dateString {
@@ -133,7 +178,12 @@ static NSString * const kVideoPlaceHolder = @"video_placeholder3";
 
 
 -(void)prepareForReuse {
-    
+    //in this we should cancel tasks
+//    if ([self.currentURL isEqualToString:self.itemObj.image.webLink]) {
+//        self.imageView.image = self.currentImage;
+//    } else {
+//        [self.imageView setImage:[UIImage imageNamed:kVideoPlaceHolder]];
+//    }
 //    NSLog(@"prepare for reuse");
 }
 

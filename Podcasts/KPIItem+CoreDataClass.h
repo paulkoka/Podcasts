@@ -2,7 +2,7 @@
 //  KPIItem+CoreDataClass.h
 //  Podcasts
 //
-//  Created by Pavel Koka on 7/29/18.
+//  Created by Pavel Koka on 8/1/18.
 //  Copyright © 2018 Pavel Koka. All rights reserved.
 //
 //
@@ -11,8 +11,6 @@
 #import <CoreData/CoreData.h>
 
 @class KPIContent, KPIPicture;
-
-static NSString* MyEntityName = @"KPIItem";
 
 NS_ASSUME_NONNULL_BEGIN
 

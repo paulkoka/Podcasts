@@ -9,13 +9,14 @@
 #import "RSSLoader.h"
 #import "AppDelegate.h"
 
+
+
 @interface RSSLoader()
 @property (nonatomic) NSString* pathToRSSSoursFolder;
 @property (nonatomic,readwrite) NSMutableArray* pathToRSSSourceFiles;
 @property (nonatomic) CustomXMLParser* parser;
-@property (nonatomic) NSManagedObjectContext* context;
 @property (nonatomic) AppDelegate* appDelegate;
-@property (nonatomic, copy) void (^complitionBlock)(void);
+
 @end
 
 @implementation RSSLoader
@@ -25,55 +26,32 @@
         _pathToRSSSourceFiles = [NSMutableArray array];
         _pathToRSSSoursFolder = [self createDirectoryForRSSmain];
         _appDelegate = ((AppDelegate*) UIApplication.sharedApplication.delegate);
+
         [self createDirectoryForRSSmain];
-        [self performLoader];
+        [self startingRSSwithURL];
+       // [self performLoader];
             }
     return self;
 };
 
-- (void)performLoader {
-    self.context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
-    [self.context setParentContext:self.appDelegate.persistentContainer.viewContext];
-    
-     __weak typeof (self) weakSelf = self;
-    [self.context performBlock:^{
-        [weakSelf startingRSSwithURL:^{
-            NSError *error = nil;
 
-            if(![weakSelf.context save:&error]) {
-                NSLog(@"Bla bla bla");
-                abort();
-            }
-            
-            [weakSelf.appDelegate.persistentContainer.viewContext performBlockAndWait:^{
-                NSError *error = nil;
-                
-                if (![weakSelf.appDelegate.persistentContainer.viewContext save: &error]) {
-                    NSLog(@"Bla bla bla");
-                    abort();
-                };
-            }];
-        }];
-    }];
-}
 
-- (void)startingRSSwithURL:(void (^)(void))complitionBlock; {
-    self.complitionBlock = complitionBlock;
-    
+
+- (void)startingRSSwithURL {
     SourseURLforRead* urls = [[SourseURLforRead alloc] init];
     NSURLSessionConfiguration* myConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
     myConfig.waitsForConnectivity = YES;
-    
+
     NSOperationQueue* queue = [[NSOperationQueue alloc] init];
     [queue setQualityOfService:NSQualityOfServiceUserInitiated];
-    queue.maxConcurrentOperationCount = 5;//to sync queue
+    queue.maxConcurrentOperationCount = 1;//to sync queue
     NSURLSession* sessionForDownloadingRSS = [NSURLSession sessionWithConfiguration:myConfig delegate:self delegateQueue:queue];
-  
+
     for (NSURL* url in urls.URLs) {
         NSURLSessionDownloadTask* task = [sessionForDownloadingRSS downloadTaskWithURL:url];
         [task resume];
     }
-    
+
     [sessionForDownloadingRSS finishTasksAndInvalidate];
 }
 
@@ -107,13 +85,27 @@
         NSLog(@"error: %@ - %@", task, error);
     } else {
         NSData* data = [NSData dataWithContentsOfFile:[self.pathToRSSSourceFiles lastObject]];
+        
        
-        self.parser = [[CustomXMLParser alloc] initWithDataAndParse: data withContext:_context];
+       NSManagedObjectContext *childContext = [[NSManagedObjectContext alloc] initWithConcurrencyType: NSPrivateQueueConcurrencyType];
+            [childContext setParentContext:self.appDelegate.persistentContainer.viewContext];
+        
+        __weak typeof (self) weakSelf = self;
+
+            weakSelf.parser = [[CustomXMLParser alloc] initWithDataAndParse: data withContext:childContext];
+        
+            NSError *errorMOC = nil;
+            [childContext save:&errorMOC];
+        
+            [weakSelf.appDelegate.persistentContainer.viewContext performBlock:^{
+                NSError *errorMOC = nil;
+                [weakSelf.appDelegate.persistentContainer.viewContext save:&errorMOC];
+            }];
+            
         [self removeObjectFromPathToRSSSourceFiles:[self.pathToRSSSourceFiles lastObject]];
     }
-    
-    self.complitionBlock();
 }
+
 
 -(void)removeObjectFromPathToRSSSourceFiles:(NSString*)path{
     NSFileManager* fileManager = [NSFileManager defaultManager];

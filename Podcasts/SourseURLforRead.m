@@ -21,7 +21,7 @@ static NSString* HanselminutesCompleteMP3String = @"https://rss.simplecast.com/p
         NSURL* tedtalks_videoURL = [NSURL URLWithString:tedtalks_videoString];
         NSURL* HanselminutesCompleteMP3URL = [NSURL URLWithString: HanselminutesCompleteMP3String];
         
-        _URLs = @[tedtalks_videoURL, HanselminutesCompleteMP3URL];
+        _URLs = @[HanselminutesCompleteMP3URL, tedtalks_videoURL];
     }
     return self;
 }

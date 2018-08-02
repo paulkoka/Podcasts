@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17F77" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="KPIContent" representedClassName="KPIContent" syncable="YES">
         <attribute name="localURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="webURL" optional="YES" attributeType="String" syncable="YES"/>
@@ -22,8 +22,8 @@
         <relationship name="urlForItemPicture" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="KPIItem" inverseName="pictureURL" inverseEntity="KPIItem" syncable="YES"/>
     </entity>
     <elements>
-        <element name="KPIItem" positionX="88" positionY="-51" width="128" height="178"/>
         <element name="KPIContent" positionX="97" positionY="-198" width="128" height="88"/>
+        <element name="KPIItem" positionX="88" positionY="-51" width="128" height="178"/>
         <element name="KPIPicture" positionX="99" positionY="186" width="128" height="88"/>
     </elements>
 </model>

@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F2258192111E34F0003A665 /* KPIContent+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F22580F2111E34F0003A665 /* KPIContent+CoreDataClass.m */; };
+		2F22581A2111E34F0003A665 /* KPIContent+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2258102111E34F0003A665 /* KPIContent+CoreDataProperties.m */; };
+		2F22581B2111E34F0003A665 /* KPIItem+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2258132111E34F0003A665 /* KPIItem+CoreDataClass.m */; };
+		2F22581C2111E34F0003A665 /* KPIItem+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2258142111E34F0003A665 /* KPIItem+CoreDataProperties.m */; };
+		2F22581D2111E34F0003A665 /* KPIPicture+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2258172111E34F0003A665 /* KPIPicture+CoreDataClass.m */; };
+		2F22581E2111E34F0003A665 /* KPIPicture+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2258182111E34F0003A665 /* KPIPicture+CoreDataProperties.m */; };
+		2F22582121130F4E0003A665 /* KPIItem+PopulatingByRSSChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F22582021130F4E0003A665 /* KPIItem+PopulatingByRSSChannel.m */; };
 		2F22D592210F318600D86B13 /* CollectionViewControllerWithCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F22D591210F318600D86B13 /* CollectionViewControllerWithCoreData.m */; };
-		2F22D5AA210F4D5100D86B13 /* CollectionVewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F22D5A9210F4D5100D86B13 /* CollectionVewCell.m */; };
 		2F312237210DD851009A3B3D /* KPIItem+rSSItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F312236210DD851009A3B3D /* KPIItem+rSSItem.m */; };
 		2F31223A210DE05C009A3B3D /* Podcasts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F312238210DE05C009A3B3D /* Podcasts.xcdatamodeld */; };
-		2F312247210DE219009A3B3D /* KPIContent+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F31223D210DE219009A3B3D /* KPIContent+CoreDataClass.m */; };
-		2F312248210DE219009A3B3D /* KPIContent+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F31223E210DE219009A3B3D /* KPIContent+CoreDataProperties.m */; };
-		2F312249210DE219009A3B3D /* KPIPicture+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F312241210DE219009A3B3D /* KPIPicture+CoreDataClass.m */; };
-		2F31224A210DE219009A3B3D /* KPIPicture+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F312242210DE219009A3B3D /* KPIPicture+CoreDataProperties.m */; };
-		2F31224B210DE219009A3B3D /* KPIItem+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F312245210DE219009A3B3D /* KPIItem+CoreDataClass.m */; };
-		2F31224C210DE219009A3B3D /* KPIItem+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F312246210DE219009A3B3D /* KPIItem+CoreDataProperties.m */; };
 		2F312250210DE481009A3B3D /* KPIContent+CreateContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F31224F210DE481009A3B3D /* KPIContent+CreateContent.m */; };
 		2F312253210DE4D9009A3B3D /* KPIPicture+addPictureURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F312252210DE4D9009A3B3D /* KPIPicture+addPictureURL.m */; };
 		2F312256210E1C7F009A3B3D /* CoreDataCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F312255210E1C7F009A3B3D /* CoreDataCollectionViewController.m */; };
@@ -32,28 +32,32 @@
 		2F88E4632105F41A00D6D976 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F88E4622105F41A00D6D976 /* main.m */; };
 		2F88E46B2105F9BD00D6D976 /* RSSLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F88E46A2105F9BD00D6D976 /* RSSLoader.m */; };
 		2F88E4732106598000D6D976 /* SourseURLforRead.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F88E4722106598000D6D976 /* SourseURLforRead.m */; };
+		2FD5B5E421105C8D002929BE /* NSDate+dateWithStringFromRSS.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD5B5E321105C8D002929BE /* NSDate+dateWithStringFromRSS.m */; };
+		2FE6FBA021131921008AE0E6 /* CollectionVewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6FB9E21131921008AE0E6 /* CollectionVewCell.m */; };
+		2FEA5AA121106468000FFEA9 /* NSString+trimmingOfDataFromRss.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FEA5AA021106468000FFEA9 /* NSString+trimmingOfDataFromRss.m */; };
+		2FEA5AA42110A06F000FFEA9 /* NSString+stringFromDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FEA5AA32110A06F000FFEA9 /* NSString+stringFromDate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F22580D2111E34F0003A665 /* KPIContent+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KPIContent+CoreDataProperties.h"; sourceTree = "<group>"; };
+		2F22580E2111E34F0003A665 /* KPIContent+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KPIContent+CoreDataClass.h"; sourceTree = "<group>"; };
+		2F22580F2111E34F0003A665 /* KPIContent+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "KPIContent+CoreDataClass.m"; sourceTree = "<group>"; };
+		2F2258102111E34F0003A665 /* KPIContent+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "KPIContent+CoreDataProperties.m"; sourceTree = "<group>"; };
+		2F2258112111E34F0003A665 /* KPIItem+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KPIItem+CoreDataProperties.h"; sourceTree = "<group>"; };
+		2F2258122111E34F0003A665 /* KPIItem+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KPIItem+CoreDataClass.h"; sourceTree = "<group>"; };
+		2F2258132111E34F0003A665 /* KPIItem+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "KPIItem+CoreDataClass.m"; sourceTree = "<group>"; };
+		2F2258142111E34F0003A665 /* KPIItem+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "KPIItem+CoreDataProperties.m"; sourceTree = "<group>"; };
+		2F2258152111E34F0003A665 /* KPIPicture+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KPIPicture+CoreDataProperties.h"; sourceTree = "<group>"; };
+		2F2258162111E34F0003A665 /* KPIPicture+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KPIPicture+CoreDataClass.h"; sourceTree = "<group>"; };
+		2F2258172111E34F0003A665 /* KPIPicture+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "KPIPicture+CoreDataClass.m"; sourceTree = "<group>"; };
+		2F2258182111E34F0003A665 /* KPIPicture+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "KPIPicture+CoreDataProperties.m"; sourceTree = "<group>"; };
+		2F22581F21130F4E0003A665 /* KPIItem+PopulatingByRSSChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KPIItem+PopulatingByRSSChannel.h"; sourceTree = "<group>"; };
+		2F22582021130F4E0003A665 /* KPIItem+PopulatingByRSSChannel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "KPIItem+PopulatingByRSSChannel.m"; sourceTree = "<group>"; };
 		2F22D590210F318600D86B13 /* CollectionViewControllerWithCoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewControllerWithCoreData.h; sourceTree = "<group>"; };
 		2F22D591210F318600D86B13 /* CollectionViewControllerWithCoreData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewControllerWithCoreData.m; sourceTree = "<group>"; };
-		2F22D5A8210F4D5000D86B13 /* CollectionVewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionVewCell.h; sourceTree = "<group>"; };
-		2F22D5A9210F4D5100D86B13 /* CollectionVewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionVewCell.m; sourceTree = "<group>"; };
 		2F312235210DD851009A3B3D /* KPIItem+rSSItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KPIItem+rSSItem.h"; sourceTree = "<group>"; };
 		2F312236210DD851009A3B3D /* KPIItem+rSSItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "KPIItem+rSSItem.m"; sourceTree = "<group>"; };
 		2F312239210DE05C009A3B3D /* Podcasts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Podcasts.xcdatamodel; sourceTree = "<group>"; };
-		2F31223B210DE219009A3B3D /* KPIContent+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KPIContent+CoreDataProperties.h"; sourceTree = "<group>"; };
-		2F31223C210DE219009A3B3D /* KPIContent+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KPIContent+CoreDataClass.h"; sourceTree = "<group>"; };
-		2F31223D210DE219009A3B3D /* KPIContent+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "KPIContent+CoreDataClass.m"; sourceTree = "<group>"; };
-		2F31223E210DE219009A3B3D /* KPIContent+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "KPIContent+CoreDataProperties.m"; sourceTree = "<group>"; };
-		2F31223F210DE219009A3B3D /* KPIPicture+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KPIPicture+CoreDataProperties.h"; sourceTree = "<group>"; };
-		2F312240210DE219009A3B3D /* KPIPicture+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KPIPicture+CoreDataClass.h"; sourceTree = "<group>"; };
-		2F312241210DE219009A3B3D /* KPIPicture+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "KPIPicture+CoreDataClass.m"; sourceTree = "<group>"; };
-		2F312242210DE219009A3B3D /* KPIPicture+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "KPIPicture+CoreDataProperties.m"; sourceTree = "<group>"; };
-		2F312243210DE219009A3B3D /* KPIItem+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KPIItem+CoreDataProperties.h"; sourceTree = "<group>"; };
-		2F312244210DE219009A3B3D /* KPIItem+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KPIItem+CoreDataClass.h"; sourceTree = "<group>"; };
-		2F312245210DE219009A3B3D /* KPIItem+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "KPIItem+CoreDataClass.m"; sourceTree = "<group>"; };
-		2F312246210DE219009A3B3D /* KPIItem+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "KPIItem+CoreDataProperties.m"; sourceTree = "<group>"; };
 		2F31224E210DE481009A3B3D /* KPIContent+CreateContent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KPIContent+CreateContent.h"; sourceTree = "<group>"; };
 		2F31224F210DE481009A3B3D /* KPIContent+CreateContent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "KPIContent+CreateContent.m"; sourceTree = "<group>"; };
 		2F312251210DE4D9009A3B3D /* KPIPicture+addPictureURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KPIPicture+addPictureURL.h"; sourceTree = "<group>"; };
@@ -82,6 +86,14 @@
 		2F88E46A2105F9BD00D6D976 /* RSSLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSSLoader.m; sourceTree = "<group>"; };
 		2F88E4712106598000D6D976 /* SourseURLforRead.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SourseURLforRead.h; sourceTree = "<group>"; };
 		2F88E4722106598000D6D976 /* SourseURLforRead.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SourseURLforRead.m; sourceTree = "<group>"; };
+		2FD5B5E221105C8D002929BE /* NSDate+dateWithStringFromRSS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+dateWithStringFromRSS.h"; sourceTree = "<group>"; };
+		2FD5B5E321105C8D002929BE /* NSDate+dateWithStringFromRSS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+dateWithStringFromRSS.m"; sourceTree = "<group>"; };
+		2FE6FB9E21131921008AE0E6 /* CollectionVewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionVewCell.m; sourceTree = "<group>"; };
+		2FE6FB9F21131921008AE0E6 /* CollectionVewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionVewCell.h; sourceTree = "<group>"; };
+		2FEA5A9F21106468000FFEA9 /* NSString+trimmingOfDataFromRss.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+trimmingOfDataFromRss.h"; sourceTree = "<group>"; };
+		2FEA5AA021106468000FFEA9 /* NSString+trimmingOfDataFromRss.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+trimmingOfDataFromRss.m"; sourceTree = "<group>"; };
+		2FEA5AA22110A06F000FFEA9 /* NSString+stringFromDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+stringFromDate.h"; sourceTree = "<group>"; };
+		2FEA5AA32110A06F000FFEA9 /* NSString+stringFromDate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+stringFromDate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +125,8 @@
 		2F31224D210DE43F009A3B3D /* categoriesForCreatingEntities */ = {
 			isa = PBXGroup;
 			children = (
+				2F22581F21130F4E0003A665 /* KPIItem+PopulatingByRSSChannel.h */,
+				2F22582021130F4E0003A665 /* KPIItem+PopulatingByRSSChannel.m */,
 				2F312235210DD851009A3B3D /* KPIItem+rSSItem.h */,
 				2F312236210DD851009A3B3D /* KPIItem+rSSItem.m */,
 				2F31224E210DE481009A3B3D /* KPIContent+CreateContent.h */,
@@ -126,8 +140,8 @@
 		2F31225A210E2CD4009A3B3D /* cells */ = {
 			isa = PBXGroup;
 			children = (
-				2F22D5A8210F4D5000D86B13 /* CollectionVewCell.h */,
-				2F22D5A9210F4D5100D86B13 /* CollectionVewCell.m */,
+				2FE6FB9F21131921008AE0E6 /* CollectionVewCell.h */,
+				2FE6FB9E21131921008AE0E6 /* CollectionVewCell.m */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -196,9 +210,10 @@
 				2F88E4512105F41800D6D976 /* AppDelegate.m */,
 				2F312238210DE05C009A3B3D /* Podcasts.xcdatamodeld */,
 				2F5903EE210A4DAF00775237 /* Tags */,
+				2F632AC1210747840033510F /* XMLParser */,
+				2FD5B5DB21105A0F002929BE /* customCategories */,
 				2FF04B352109EE7D00A6C4D4 /* forCoreData */,
 				2F5903E6210A26EF00775237 /* ViewControllers */,
-				2F632AC1210747840033510F /* XMLParser */,
 				2F632AC0210746FE0033510F /* LoadRSS */,
 				2F88E4562105F41800D6D976 /* Main.storyboard */,
 				2F88E45C2105F41A00D6D976 /* Assets.xcassets */,
@@ -209,22 +224,35 @@
 			path = Podcasts;
 			sourceTree = "<group>";
 		};
+		2FD5B5DB21105A0F002929BE /* customCategories */ = {
+			isa = PBXGroup;
+			children = (
+				2FD5B5E221105C8D002929BE /* NSDate+dateWithStringFromRSS.h */,
+				2FD5B5E321105C8D002929BE /* NSDate+dateWithStringFromRSS.m */,
+				2FEA5A9F21106468000FFEA9 /* NSString+trimmingOfDataFromRss.h */,
+				2FEA5AA021106468000FFEA9 /* NSString+trimmingOfDataFromRss.m */,
+				2FEA5AA22110A06F000FFEA9 /* NSString+stringFromDate.h */,
+				2FEA5AA32110A06F000FFEA9 /* NSString+stringFromDate.m */,
+			);
+			path = customCategories;
+			sourceTree = "<group>";
+		};
 		2FF04B352109EE7D00A6C4D4 /* forCoreData */ = {
 			isa = PBXGroup;
 			children = (
+				2F22580D2111E34F0003A665 /* KPIContent+CoreDataProperties.h */,
+				2F22580E2111E34F0003A665 /* KPIContent+CoreDataClass.h */,
+				2F22580F2111E34F0003A665 /* KPIContent+CoreDataClass.m */,
+				2F2258102111E34F0003A665 /* KPIContent+CoreDataProperties.m */,
+				2F2258112111E34F0003A665 /* KPIItem+CoreDataProperties.h */,
+				2F2258122111E34F0003A665 /* KPIItem+CoreDataClass.h */,
+				2F2258132111E34F0003A665 /* KPIItem+CoreDataClass.m */,
+				2F2258142111E34F0003A665 /* KPIItem+CoreDataProperties.m */,
+				2F2258152111E34F0003A665 /* KPIPicture+CoreDataProperties.h */,
+				2F2258162111E34F0003A665 /* KPIPicture+CoreDataClass.h */,
+				2F2258172111E34F0003A665 /* KPIPicture+CoreDataClass.m */,
+				2F2258182111E34F0003A665 /* KPIPicture+CoreDataProperties.m */,
 				2F31224D210DE43F009A3B3D /* categoriesForCreatingEntities */,
-				2F31223B210DE219009A3B3D /* KPIContent+CoreDataProperties.h */,
-				2F31223C210DE219009A3B3D /* KPIContent+CoreDataClass.h */,
-				2F31223D210DE219009A3B3D /* KPIContent+CoreDataClass.m */,
-				2F31223E210DE219009A3B3D /* KPIContent+CoreDataProperties.m */,
-				2F31223F210DE219009A3B3D /* KPIPicture+CoreDataProperties.h */,
-				2F312240210DE219009A3B3D /* KPIPicture+CoreDataClass.h */,
-				2F312241210DE219009A3B3D /* KPIPicture+CoreDataClass.m */,
-				2F312242210DE219009A3B3D /* KPIPicture+CoreDataProperties.m */,
-				2F312244210DE219009A3B3D /* KPIItem+CoreDataClass.h */,
-				2F312245210DE219009A3B3D /* KPIItem+CoreDataClass.m */,
-				2F312243210DE219009A3B3D /* KPIItem+CoreDataProperties.h */,
-				2F312246210DE219009A3B3D /* KPIItem+CoreDataProperties.m */,
 			);
 			name = forCoreData;
 			sourceTree = "<group>";
@@ -304,26 +332,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FE6FBA021131921008AE0E6 /* CollectionVewCell.m in Sources */,
+				2F2258192111E34F0003A665 /* KPIContent+CoreDataClass.m in Sources */,
 				2F312237210DD851009A3B3D /* KPIItem+rSSItem.m in Sources */,
+				2F22582121130F4E0003A665 /* KPIItem+PopulatingByRSSChannel.m in Sources */,
+				2FD5B5E421105C8D002929BE /* NSDate+dateWithStringFromRSS.m in Sources */,
 				2F88E46B2105F9BD00D6D976 /* RSSLoader.m in Sources */,
 				2F312256210E1C7F009A3B3D /* CoreDataCollectionViewController.m in Sources */,
 				2F312250210DE481009A3B3D /* KPIContent+CreateContent.m in Sources */,
-				2F22D5AA210F4D5100D86B13 /* CollectionVewCell.m in Sources */,
 				2F88E4732106598000D6D976 /* SourseURLforRead.m in Sources */,
 				2F31223A210DE05C009A3B3D /* Podcasts.xcdatamodeld in Sources */,
+				2F22581D2111E34F0003A665 /* KPIPicture+CoreDataClass.m in Sources */,
+				2F22581E2111E34F0003A665 /* KPIPicture+CoreDataProperties.m in Sources */,
 				2F22D592210F318600D86B13 /* CollectionViewControllerWithCoreData.m in Sources */,
-				2F312248210DE219009A3B3D /* KPIContent+CoreDataProperties.m in Sources */,
-				2F312247210DE219009A3B3D /* KPIContent+CoreDataClass.m in Sources */,
+				2FEA5AA42110A06F000FFEA9 /* NSString+stringFromDate.m in Sources */,
 				2F5903E9210A275500775237 /* KPMasterCollectionViewController.m in Sources */,
 				2F312253210DE4D9009A3B3D /* KPIPicture+addPictureURL.m in Sources */,
 				2F88E4552105F41800D6D976 /* ViewController.m in Sources */,
-				2F31224B210DE219009A3B3D /* KPIItem+CoreDataClass.m in Sources */,
 				2F632AC421074A6A0033510F /* CustomXMLParser.m in Sources */,
-				2F31224C210DE219009A3B3D /* KPIItem+CoreDataProperties.m in Sources */,
-				2F31224A210DE219009A3B3D /* KPIPicture+CoreDataProperties.m in Sources */,
+				2FEA5AA121106468000FFEA9 /* NSString+trimmingOfDataFromRss.m in Sources */,
+				2F22581C2111E34F0003A665 /* KPIItem+CoreDataProperties.m in Sources */,
 				2F312259210E268A009A3B3D /* RssItemsCDCVC.m in Sources */,
+				2F22581B2111E34F0003A665 /* KPIItem+CoreDataClass.m in Sources */,
+				2F22581A2111E34F0003A665 /* KPIContent+CoreDataProperties.m in Sources */,
 				2F88E4632105F41A00D6D976 /* main.m in Sources */,
-				2F312249210DE219009A3B3D /* KPIPicture+CoreDataClass.m in Sources */,
 				2F88E4522105F41800D6D976 /* AppDelegate.m in Sources */,
 				2F5903F1210A4DD500775237 /* MyTags.m in Sources */,
 			);

@@ -7,6 +7,9 @@
 //
 
 #import "CollectionViewControllerWithCoreData.h"
+#import "NSString+stringFromDate.h"
+
+
 
 @interface CollectionViewControllerWithCoreData () <NSFetchedResultsControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -38,7 +41,6 @@ static NSString * const reuseIdentifier = @"Cell";
     
     
     
-    
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -52,6 +54,8 @@ static NSString * const reuseIdentifier = @"Cell";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 /*
 #pragma mark - Navigation
@@ -73,20 +77,25 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 //#warning Incomplete implementation, return the number of items
-   
-    return [[[_fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
+    long numberOfObjects = [[[_fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
+    if (numberOfObjects) {
+        return numberOfObjects;
+    } else{
+        return 12;
+    }
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CollectionVewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    
-    cell.title.text = @"Here will be content";
-    cell.author.text = @"author";
-    cell.date.text = @"publicationDate";
-    cell.imageView.image = [UIImage imageNamed:@"placeholder"];
+        CollectionVewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    if ([[[_fetchedResultsController sections] objectAtIndex:0] numberOfObjects]) {
+
+        [cell setDataToLabelsFrom:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+      return cell;
+    }
+
     // Configure the cell
-    
     return cell;
+  
 }
 
 #pragma mark <UICollectionViewDelegate>
@@ -139,11 +148,16 @@ static NSString * const reuseIdentifier = @"Cell";
                                    entityForName:@"KPIItem" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
+ 
+    
     NSSortDescriptor *sort = [[NSSortDescriptor alloc]
                               initWithKey:@"publicationDate" ascending:NO];
+    
     [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
     
     [fetchRequest setFetchBatchSize:20];
+    
+
     
     NSFetchedResultsController *theFetchedResultsController =
     [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
@@ -197,7 +211,7 @@ static NSString * const reuseIdentifier = @"Cell";
             break;
             
         case NSFetchedResultsChangeUpdate:
-            //[self configureCell:[collectionView cellForItemAtIndexPath:indexPath] atIndexPath:indexPath];
+            
             [collectionView cellForItemAtIndexPath:indexPath];
             break;
             

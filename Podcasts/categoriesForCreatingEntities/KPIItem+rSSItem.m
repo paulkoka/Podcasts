@@ -8,6 +8,8 @@
 
 #import "KPIItem+rSSItem.h"
 
+static NSString* MyEntityName = @"KPIItem";
+
 @implementation KPIItem (rSSItem)
 +(KPIItem*) itemWithRSSItem:(NSDictionary*) itemDictionary
      inManagedObjectContext: (NSManagedObjectContext*) context{
@@ -21,8 +23,8 @@
     NSArray* matches = [context executeFetchRequest:request error:&error];
     
     if (!matches || error || matches.count > 1) {
-        NSLog(@"%@", error);
-        NSLog(@"KPIItem+rSSItem.h error");
+      //  NSLog(@"%@", error);
+      //  NSLog(@"KPIItem+rSSItem.h error count  = %ld", matches.count );
     } else if ([matches count]){
         item = [matches firstObject];
     }

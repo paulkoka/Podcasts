@@ -8,8 +8,9 @@
 
 #import "CustomXMLParser.h"
 #import "KPIItem+rSSItem.h"
+#import "NSDate+dateWithStringFromRSS.h"
+ #import "NSString+trimmingOfDataFromRss.h"
 
-int i = 0;
 
 @interface CustomXMLParser()
 
@@ -53,7 +54,6 @@ int i = 0;
 }
 
 -(void) parserDidStartDocument:(NSXMLParser *)parser{
-    NSLog (@"parserDidStartDocument");
     self.inItemElement = NO;
 }
 
@@ -73,7 +73,8 @@ int i = 0;
     if (self.inItemElement && [_tags.setOfTags containsObject:elementName])
                                     {
                                         
-                                       self.capturedCharacters = [NSMutableString string];
+                                        self.capturedCharacters = [NSMutableString string];
+                                        self.currentElementName = [NSString stringWithString:elementName];
                                         
                                         if ([elementName isEqualToString:_tags.imageURL]) {
                                             [self.itemFromRSS setObject:[attributeDict objectForKey:@"href"] forKey:elementName];
@@ -83,30 +84,14 @@ int i = 0;
                                             [self.itemFromRSS setObject: [attributeDict objectForKey:@"url"] forKey:elementName];
                                             return;
                                         }
-                                        
-                                        self.currentElementName = [NSString stringWithString:elementName];
-                                        
+
                                     }
     }
 
 -(void)parser:(NSXMLParser *)parser foundCDATA:(NSData *)CDATABlock{
     if (self.inItemElement) {
-        NSString* string = [[NSString alloc] initWithData:CDATABlock encoding:NSUTF8StringEncoding];
-            if ([string containsString:@"<p>"] )
-            {
-            NSCharacterSet* set = [NSCharacterSet  characterSetWithCharactersInString:@"</p>"];
-                
-            string = [string stringByTrimmingCharactersInSet:set];
-                
-                NSRange range = [string rangeOfString:@"</p>"];
-                
-                if (NSNotFound != range.location) {
-                    string = [string substringToIndex: (range.location)];
-                }
-                
-                
-        }
-      [self.itemFromRSS setObject:string forKey:_tags.details];
+        NSString* string = [NSString trimmingOfDataFromRss:CDATABlock];
+        [self.itemFromRSS setObject:string forKey:_tags.details];
     }
 
 }
@@ -119,22 +104,33 @@ int i = 0;
         self.waitingForSourseName = NO;
     }
     
-    if (self.capturedCharacters) {
+    if (self.inItemElement && self.capturedCharacters) {
+        [self.capturedCharacters appendString:string];
+        
         if ([self.currentElementName isEqualToString:_tags.pubDate]) {
+
+            NSDate *date = [NSDate dateWithStringFromRSS:string];
             
-            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-            
-            formatter.dateFormat = @"E, dd MMM yyyy HH:mm:ss Z";
-            
-            NSDate *date = [formatter dateFromString:string];
             [self.itemFromRSS setObject:date forKey:_tags.pubDate];
             return;
         }
+        
+        string = [self preapreforSaving:string];
+        
         [self.itemFromRSS setObject:string forKey:self.currentElementName];
-     
-        //[self.capturedCharacters appendString:string];
     }
-    
+}
+
+-(NSString*)preapreforSaving:(NSString*)string{
+    if ([self.currentElementName isEqualToString:_tags.title]) {       
+        if ([self.capturedCharacters containsString:@" | "]) {
+            NSRange range = [string rangeOfString:@" | "];
+            if (NSNotFound != range.location) {
+                string = [string substringToIndex:(range.location)];
+            }
+        }
+    }
+    return string;
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName
@@ -142,32 +138,27 @@ int i = 0;
     
     if (self.inItemElement && [_tags.setOfTags containsObject:elementName])
     {
-        if ([elementName isEqualToString:_tags.title]) {
-            if ([self.capturedCharacters containsString:@" | "]) {
-                NSRange range = [self.capturedCharacters rangeOfString:@" | "];
-                if (NSNotFound != range.location) {
-                    self.capturedCharacters = (NSMutableString*)[self.capturedCharacters substringToIndex:(range.location)];
-                }
-            }
-        }
-        
+      
         self.capturedCharacters = nil;
         self.currentElementName = nil;
         
         }
             if ([elementName isEqualToString:@"item"]) {
-                
-                [self.itemFromRSS setObject:self.currentSourceType forKey:self.tags.MysourceType];
-                
-                self.itemInCoreData = [KPIItem itemWithRSSItem:self.itemFromRSS inManagedObjectContext:_context];
-                            
-                self.itemFromRSS = nil;
-          
-                self.inItemElement = NO;
+                [self saveElement];
     }
 }
 
--(void)parserDidEndDocument:(NSXMLParser *)parser{
-    NSLog(@"parserDidEndDocument");
+-(void)saveElement{
+    [self.itemFromRSS setObject:self.currentSourceType forKey:self.tags.MysourceType];
+    
+    self.itemInCoreData = [KPIItem itemWithRSSItem:self.itemFromRSS inManagedObjectContext:_context];
+    self.
+    self.itemFromRSS = nil;
+    
+    self.inItemElement = NO;
+}
+
+-(void) parserDidEndDocument:(NSXMLParser *)parser{
+
 }
 @end
