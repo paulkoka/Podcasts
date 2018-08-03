@@ -2,7 +2,7 @@
 //  KPIPicture+CoreDataProperties.h
 //  Podcasts
 //
-//  Created by Pavel Koka on 8/1/18.
+//  Created by Pavel Koka on 8/2/18.
 //  Copyright © 2018 Pavel Koka. All rights reserved.
 //
 //
@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, copy) NSString *localURL;
 @property (nullable, nonatomic, copy) NSString *webURL;
+@property (nullable, nonatomic, copy) NSString *picturePreview;
 @property (nullable, nonatomic, retain) KPIItem *urlForItemPicture;
 
 @end

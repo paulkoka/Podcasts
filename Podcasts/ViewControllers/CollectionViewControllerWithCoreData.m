@@ -155,14 +155,13 @@ static NSString * const reuseIdentifier = @"Cell";
     
     [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
     
-    [fetchRequest setFetchBatchSize:20];
-    
-
+    [fetchRequest setFetchBatchSize:10];
     
     NSFetchedResultsController *theFetchedResultsController =
     [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
                                         managedObjectContext:_managedObjectContext sectionNameKeyPath:nil
                                                    cacheName:nil];
+    
     self.fetchedResultsController = theFetchedResultsController;
     _fetchedResultsController.delegate = self;
     

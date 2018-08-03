@@ -8,8 +8,7 @@
 
 #import "KPIItem+CoreDataClass.h"
 #import "MyTags.h"
-#import "KPIContent+CreateContent.h"
-#import "KPIPicture+addPictureURL.h"
+
 
 @interface KPIItem (rSSItem)
 

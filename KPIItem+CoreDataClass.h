@@ -1,5 +1,5 @@
 //
-//  KPIContent+CoreDataClass.h
+//  KPIItem+CoreDataClass.h
 //  Podcasts
 //
 //  Created by Pavel Koka on 8/2/18.
@@ -10,14 +10,14 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class KPIItem;
+@class NSData, UIImage;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KPIContent : NSManagedObject
+@interface KPIItem : NSManagedObject
 
 @end
 
 NS_ASSUME_NONNULL_END
 
-#import "KPIContent+CoreDataProperties.h"
+#import "KPIItem+CoreDataProperties.h"

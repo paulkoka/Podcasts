@@ -36,10 +36,13 @@ static NSString* MyEntityName = @"KPIItem";
         item.details = [itemDictionary objectForKey:tags.details];
         item.gUID = [itemDictionary objectForKey:tags.guid];
         item.sourceType = [itemDictionary objectForKey:tags.MysourceType];
-        item.publicationDate =[itemDictionary objectForKey:tags.pubDate];
-        item.contentURL = [KPIContent contentWithString:[itemDictionary objectForKey:tags.contentURL] inManagedObjectContext:context                          ];
-        item.pictureURL = [KPIPicture pictureWithString:[itemDictionary objectForKey:tags.imageURL] inManagedObjectContext:context];
-     }
+        
+        item.publicationDate = [itemDictionary objectForKey:tags.pubDate];
+        item.contentWebURL = [itemDictionary objectForKey:tags.contentURL];
+        item.pictureWebURL = [itemDictionary objectForKey:tags.imageURL];
+        
+        item.pictureLocalURL = [[itemDictionary objectForKey:tags.imageURL] lastPathComponent];
+           }
     return item;
 }
 @end

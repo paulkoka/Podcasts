@@ -11,7 +11,7 @@
 
 
 
-@interface RSSLoader()
+@interface RSSLoader() 
 @property (nonatomic) NSString* pathToRSSSoursFolder;
 @property (nonatomic,readwrite) NSMutableArray* pathToRSSSourceFiles;
 @property (nonatomic) CustomXMLParser* parser;

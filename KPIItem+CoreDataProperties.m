@@ -22,7 +22,12 @@
 @dynamic publicationDate;
 @dynamic sourceType;
 @dynamic title;
-@dynamic contentURL;
-@dynamic pictureURL;
+@dynamic pictureLocalURL;
+@dynamic contentLocalURL;
+@dynamic pictureWebURL;
+@dynamic contentWebURL;
+@dynamic fullPicture;
+@dynamic previewPicture;
+@dynamic content;
 
 @end

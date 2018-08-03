@@ -23,8 +23,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSDate *publicationDate;
 @property (nullable, nonatomic, copy) NSString *sourceType;
 @property (nullable, nonatomic, copy) NSString *title;
-@property (nullable, nonatomic, retain) KPIContent *contentURL;
-@property (nullable, nonatomic, retain) KPIPicture *pictureURL;
+@property (nullable, nonatomic, copy) NSString *pictureLocalURL;
+@property (nullable, nonatomic, copy) NSString *contentLocalURL;
+@property (nullable, nonatomic, copy) NSString *pictureWebURL;
+@property (nullable, nonatomic, copy) NSString *contentWebURL;
+@property (nullable, nonatomic, retain) UIImage *fullPicture;
+@property (nullable, nonatomic, retain) UIImage *previewPicture;
+@property (nullable, nonatomic, retain) NSData *content;
 
 @end
 

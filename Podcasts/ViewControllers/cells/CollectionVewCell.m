@@ -77,7 +77,6 @@ static NSString * const kVideoPlaceHolder = @"placeholder";
     [self.imageView setImage:[UIImage imageNamed:kVideoPlaceHolder]];
     [self.imageView setContentMode:UIViewContentModeScaleAspectFill];
     
-    
     //setting socntrainst and stack
     [self createInfoStackView];
     [self createImageAndTypeStackView];
@@ -97,7 +96,9 @@ static NSString * const kVideoPlaceHolder = @"placeholder";
     [self.author setTextAlignment:NSTextAlignmentLeft];
     [self setDateLabelWithDate:[NSString getStringFromDate:item.publicationDate] ];
     self.duration.text = item.duration;
-    
+    self.imageView.image = item.fullPicture;
+    NSLog(@"cell created");
+    //self.imageView.image =;
     //self.imageView.image = item.itemImage;
 //    if (item.image.localLink != nil ) {
 //        [self.imageView setImage:[[ServiceManager sharedManager] fetchImageFromSandBoxForItem:item]];
